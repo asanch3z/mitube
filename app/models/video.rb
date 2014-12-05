@@ -20,6 +20,7 @@ class Video < ActiveRecord::Base
 	private
 	  def get_additional_info
 	    begin
+	    	# YouTube SDK
 	      client = YouTubeIt::Client.new(:dev_key =>  'AIzaSyChlLnpks5VeOt-_o74s3UuqqDSwh_R-r8')
 	      video  = client.video_by(uid)
 	      self.title = video.title
